@@ -8,7 +8,7 @@ module.exports = {
       task: task,
     }
     savedToDoItems.push(newTodo)
-    res.status(200).send(savedToDoItems)
+    res.status(200).send(newTodo)
     globalId++
   },
   editTodos: (req, res) => {},
