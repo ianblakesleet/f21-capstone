@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) => {
     alert('you must add something!')
   } else {
     axios.post('http://localhost:3030/api/user', taskBody).then((res) => {
-      const { task } = res.data
+      const { task, id } = res.data
       console.log(res.data)
       //getting the val of forms input to then assign to newly appended input
       const todoItemBox = document.createElement('div')
@@ -27,10 +27,9 @@ form.addEventListener('submit', (e) => {
       deleteBtn.classList.add('deleteTodo')
       editBtn.innerText = 'Edit'
       deleteBtn.innerText = 'X'
+      todoItem.value = `${task}`
       //setting value to the input from response data.
 
-      todoItem.value = `${task}`
-      //adding classes to the created elements
       todoContentBox.appendChild(todoItemBox)
       todoItemBox.appendChild(todoItem)
       todoItemBox.appendChild(editBtn)
@@ -46,13 +45,40 @@ form.addEventListener('submit', (e) => {
         } else if (editBtn.innerText === 'Save') {
           todoItem.setAttribute('readonly', 'readonly')
           editBtn.innerText = 'Edit'
-          // axios.put(`http://localhost:3030/api/user/${id}`)
+          //this here is to edit task, and send a put request to edit it in database.
+          let editedTodo = {
+            newTask: `${todoItem.value}`,
+          }
+
+          axios
+            .put(`http://localhost:3030/api/user/${id}`, editedTodo)
+            .then((res) => {
+              console.log(res.data)
+            })
         }
       })
       deleteBtn.addEventListener('click', () => {
         todoItemBox.remove()
+        axios.delete(`http://localhost:3030/api/user/${id}`).then((res) => {
+          console.log(res.data)
+        })
       })
       //adding functionality to buttons
     })
   }
+})
+// document.querySelector('#signout').addEventListener('click', () => {
+//   axios.get('http://localhost:3030/api/user/').then((res) => {
+//     console.log(res.data)
+//   })
+// })
+//adding welcome message with username thats saved to locastorage(from fake login page) also adding a routing back with singout button, that also clears local storage.
+const welcomeMessage = document.querySelector('#welcome-banner')
+const backToLogin = document.getElementById('signout')
+
+welcomeMessage.innerText += ' ' + window.localStorage.getItem('username')
+
+backToLogin.addEventListener('click', () => {
+  window.localStorage.removeItem('username')
+  window.location.href = './login.html'
 })

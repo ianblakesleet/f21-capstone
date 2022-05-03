@@ -11,5 +11,20 @@ module.exports = {
     res.status(200).send(newTodo)
     globalId++
   },
-  editTodos: (req, res) => {},
+  editTodos: (req, res) => {
+    const { id } = req.params
+    const { newTask } = req.body
+    let index = savedToDoItems.findIndex((elem) => +elem.id === +id)
+    savedToDoItems[index].task = `${newTask}`
+    res.status(200).send(savedToDoItems)
+  },
+  getAllTodos: (req, res) => {
+    res.status(200).send(savedToDoItems)
+  },
+  deleteTodo: (req, res) => {
+    const { id } = req.params
+    let index = savedToDoItems.findIndex((elem) => +elem.id === +id)
+    savedToDoItems.splice(index, 1)
+    res.status(200).send(savedToDoItems)
+  },
 }
