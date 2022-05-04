@@ -10,10 +10,12 @@
     <div class="loginContainer">
         <form class="loginForm" id="login">
             <h1>Login</h1>
-            <input id="email"type="text" placeholder="Email" required>
-            <input id="password" type="password" placeholder="Password"required>
+            <label for="email">Email</label>
+            <input id="email"type="text" placeholder="Email" name="email" required>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password" name="password" required>
             <button>Login</button>
-            <span><a href="./createAcc.html">Don't have an account? Create one</a></span>
+            <span><a href="./createAcc.html">Don't have an account? Sign up</a></span>
         </form>
     </div>
     <script src="../node_modules/axios/dist/axios.min.js"></script>

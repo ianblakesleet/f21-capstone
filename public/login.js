@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', (e) => {
     password: `${userPass.value}`,
   }
   axios.post('http://localhost:3030/api/user/auth', body).then((res) => {
-    console.log(res.data[0])
+    // console.log(res.data[0])
     const { username, user_id, email, user_pass } = res.data[0]
     if (userEmail.value === email && userPass.value === user_pass) {
       window.localStorage.setItem('userId', user_id)

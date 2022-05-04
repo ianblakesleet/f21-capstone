@@ -16,9 +16,9 @@ const {
 } = require('./controller')
 
 app.post('/api/user', createTodos)
-app.put('/api/user/:id', editTodos)
-app.get('/api/user', getAllTodos)
-app.delete('/api/user/:id', deleteTodo)
+app.put('/api/user/:task_id', editTodos)
+app.get('/api/user/:userId', getAllTodos)
+app.delete('/api/user/:task_id', deleteTodo)
 //user authentication
 app.post('/api/user/auth', authUser)
 app.post('/api/user/create', createUser)
