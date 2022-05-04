@@ -8,15 +8,15 @@
 </head>
 <body>
     <div class="loginContainer">
-        <form class="loginForm" id="login">
+        <form id="createAccForm">
             <h1>Create Account</h1>
-            <input type="text" placeholder="username" required>
-            <input type="password" placeholder="Password"required>
-            <input type="password" placeholder="Repeat Password"required>
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password"required>  
             <button>Create account</button>
-            
         </form>
     </div>
-    <script src="main.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="createAcc.js"></script>
 </body>
 </html>

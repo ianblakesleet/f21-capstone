@@ -1,9 +1,23 @@
-const userForm = document.getElementById('login')
-const userNameInput = document.getElementById('username')
+const loginForm = document.querySelector('#login')
+const userEmail = document.querySelector('#email')
+const userPass = document.querySelector('#password')
 
-userForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
-
-  window.localStorage.setItem('username', userNameInput.value)
-  window.location.href = '/public/main.html'
+  let body = {
+    email: `${userEmail.value}`,
+    password: `${userPass.value}`,
+  }
+  axios.post('http://localhost:3030/api/user/auth', body).then((res) => {
+    console.log(res.data[0])
+    const { username, user_id, email, user_pass } = res.data[0]
+    if (userEmail.value === email && userPass.value === user_pass) {
+      window.localStorage.setItem('userId', user_id)
+      window.localStorage.setItem('username', `${username}`)
+      window.location.href = '/public/main.html'
+      //once it verifies info from database, it will save user_id and username into local storage. Then route to main app with that info.
+    } else {
+      alert('no')
+    }
+  })
 })

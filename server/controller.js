@@ -39,4 +39,32 @@ module.exports = {
     savedToDoItems.splice(index, 1)
     res.status(200).send(savedToDoItems)
   },
+  createUser: (req, res) => {
+    const { email, username, password } = req.body
+    sequelize
+      .query(
+        `
+      INSERT INTO users (email, username, user_pass)
+      VALUES ('${email}', '${username}', '${password}');
+      `
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0])
+      })
+      .catch((err) => console.log(err))
+  },
+  authUser: (req, res) => {
+    const { email, password } = req.body
+    sequelize
+      .query(
+        `SELECT user_id, email, user_pass, username
+       FROM users
+       WHERE email = '${email}' AND user_pass = '${password}';
+        `
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0])
+      })
+      .catch((err) => console.log(err))
+  },
 }

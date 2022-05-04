@@ -79,6 +79,7 @@ const backToLogin = document.getElementById('signout')
 welcomeMessage.innerText += ' ' + window.localStorage.getItem('username')
 
 backToLogin.addEventListener('click', () => {
+  window.localStorage.removeItem('userId')
   window.localStorage.removeItem('username')
   window.location.href = './login.html'
 })
