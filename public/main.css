@@ -9,7 +9,7 @@ body{
     background-size: cover;
     min-height: 100vh;
     overflow: hidden;
-    color: bisque;;
+    color: whitesmoke
 
 }
 h1{
@@ -42,26 +42,28 @@ section{
     font-size: 1rem;
     height: 2rem;
     border-radius: 10px;
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255,255,255, 0.6);
     appearance: none;
-	border: none;
 	outline: none;
+    border: none;
     
     
 }
 .todoItemBox{
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     text-align: center;
 }
 .todoItem{
     width: 350px;
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255,255,255, 0.6);
     border-radius: 10px;
-    font-size: 1rem;
-    height: 1.5rem;
+    font-size: .8rem;
+    height: 1.2rem;
     appearance: none;
 	border: none;
 	outline: none;
+    resize: none;
+    overflow: hidden;
 }
 
 .textChange{
@@ -74,7 +76,9 @@ section{
     appearance: none;
 	border: none;
 	outline: none;
-    transition-duration: .7s;
+    transition-duration: .6s;
+    margin-LEFT: 5px;
+
 }
 .editTodo:hover, .addTodo:hover{
     border-radius: 10px;
@@ -95,5 +99,27 @@ section{
     transform: translateX(.5rem)
 }
 #signout {
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.5);
     cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 1.2rem;
 }
+#signout:hover {
+    border-radius: 10px;
+    background-color: #9FC088;
+    cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+/* textarea{
+    resize: none;
+} */

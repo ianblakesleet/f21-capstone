@@ -2,16 +2,20 @@ const form = document.querySelector('#addTodoForm')
 const todoContentBox = document.querySelector('#todoContentBox')
 const taskVal = document.querySelector('#todoValue')
 const currentUserId = localStorage.getItem('userId')
+
 const createCard = (task, task_id) => {
   //getting the val of forms input to then assign to newly appended input
   const todoItemBox = document.createElement('div')
-  const todoItem = document.createElement('input')
+  const todoItem = document.createElement('textarea')
   const editBtn = document.createElement('button')
   const deleteBtn = document.createElement('button')
   //creating the boilerplate for todoItems
   todoItemBox.classList.add('todoItemBox')
   todoItem.classList.add('todoItem')
   todoItem.setAttribute('readonly', 'readonly')
+  //attributes for my autogrow function to resize textarea
+  todoItem.setAttribute('onkeypress', 'autoGrow(this)')
+  todoItem.setAttribute('onkeyup', 'autoGrow(this)')
   editBtn.classList.add('editTodo')
   deleteBtn.classList.add('deleteTodo')
   editBtn.innerText = 'Edit'
@@ -100,3 +104,10 @@ window.addEventListener('load', () => {
     }
   })
 })
+
+//text area auto resizing.
+
+const autoGrow = (element) => {
+  element.style.height = '5px'
+  element.style.height = element.scrollHeight + 'px'
+}
