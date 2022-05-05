@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
     <title>Login Page</title>
 </head>
 <body>
     <div class="loginContainer">
+    <form class="loginForm"id="login">
+        <h1>Login</h1>
+        <div class="formInputs">
+            <label for="email">Email</label>
+            <input id="email"type="text" placeholder="Email" name="email" required>
+        </div>
+        <div class="formInputs">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password" name="password" required>
+        </div>
+        <div class="formInputs">
+            <button>Login</button> 
+        <span>Don't have an account?<a href="./createAcc.html">Sign up</a></span>
+        </div>
+    </form>
+    </div>
+    
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
+
+    <!-- <div class="loginContainer">
         <form class="loginForm" id="login">
             <h1>Login</h1>
             <label for="email">Email</label>
@@ -17,8 +41,4 @@
             <button>Login</button>
             <span><a href="./createAcc.html">Don't have an account? Sign up</a></span>
         </form>
-    </div>
-    <script src="../node_modules/axios/dist/axios.min.js"></script>
-    <script src="login.js"></script>
-</body>
-</html>
+    </div> -->

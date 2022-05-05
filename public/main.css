@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+body{
+    background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    color: bisque;;
+
+}
+h1{
+    text-align: center;
+    margin: 30px 0px;
+}
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+.inline{
+    display: inline;
+}
+section{
+
+    border-radius: 15px;
+    max-width: 700px;
+    max-height: 900px;
+}
+#addTodoBox{
+    margin-bottom: 3rem;
+    text-align: center;
+}
+#todoValue{
+    width: 450px;
+    min-width: 380px;
+    font-size: 1rem;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.5);
+    appearance: none;
+	border: none;
+	outline: none;
+    
+    
+}
+.todoItemBox{
+    padding-bottom: 10px;
+    text-align: center;
+}
+.todoItem{
+    width: 350px;
+    background-color: rgba(255,255,255, 0.5);
+    border-radius: 10px;
+    font-size: 1rem;
+    height: 1.5rem;
+    appearance: none;
+	border: none;
+	outline: none;
+}
+
+.textChange{
+    color: #296300;;
+}
+.editTodo, .deleteTodo, .addTodo {
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.5);
+    cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    transition-duration: .7s;
+}
+.editTodo:hover, .addTodo:hover{
+    border-radius: 10px;
+    background-color: #9FC088;
+    cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    transform: translateY(-.5rem)
+}
+.deleteTodo:hover{
+    border-radius: 10px;
+    background-color: #f70101c0;
+    cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    transform: translateX(.5rem)
+}
+#signout {
+    cursor: pointer;
+}

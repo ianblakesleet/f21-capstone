@@ -9,7 +9,7 @@ const createCard = (task, task_id) => {
   const editBtn = document.createElement('button')
   const deleteBtn = document.createElement('button')
   //creating the boilerplate for todoItems
-  todoItemBox.classList.add('todoItem')
+  todoItemBox.classList.add('todoItemBox')
   todoItem.classList.add('todoItem')
   todoItem.setAttribute('readonly', 'readonly')
   editBtn.classList.add('editTodo')
@@ -31,10 +31,14 @@ const createCard = (task, task_id) => {
     if (editBtn.innerText === 'Edit') {
       todoItem.removeAttribute('readonly')
       todoItem.focus()
+      todoItem.classList.add('textChange')
+      editBtn.classList.add('colorChange')
       editBtn.innerText = 'Save'
     } else if (editBtn.innerText === 'Save') {
       todoItem.setAttribute('readonly', 'readonly')
       editBtn.innerText = 'Edit'
+      todoItem.classList.remove('textChange')
+      editBtn.classList.remove('colorChange')
       //this here is to edit task, and send a put request to edit it in database.
       let editedTodo = {
         updatedTask: `${todoItem.value}`,

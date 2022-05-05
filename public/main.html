@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Capstone</title>
 </head>
 <body>
     <header>
         <nav>
-          <button id="signout">Signout</button>
-          <div>
-              <h1 id="welcome-banner">Welcome, </h1>
-            <h2>hopefully better than the average todo app</h2>
-            </div>
+                <button id="signout">Signout</button>
+                <h1 id="welcome-banner">Welcome, </h1>
         </nav>
     </header>
     <main>
-        <div id="addTodoBox">
-            <form id="addTodoForm">
-                <input id="todoValue" type="text" placeholder="type here....">
-                <button>Add</button>
-            </form>
-    
-        </div>
-        <div id="todoContentBox">
-            <!-- <div class="todoItemBox">
-                    <input class="todoItem" type="text" value="exampleTodo" readonly>
-                    <button class="editTodo">Edit</button>
-                    <button class="deleteTodo">Delete</button>
-            </div> -->
-        </div>
+        <section>
+            <div id="addTodoBox">
+                <form id="addTodoForm">
+                    <input id="todoValue" type="text" placeholder="Type here...">
+                    <button class="addTodo">Add</button>
+                </form>
+        
+            </div>
+            <div id="todoContentBox">
+                <!-- <div class="todoItemBox">
+                        <input class="todoItem" type="text" value="exampleTodo" readonly>
+                        <button class="editTodo">Edit</button>
+                        <button class="deleteTodo">Delete</button>
+                </div> -->
+            </div>
+        </section>
     </main>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
