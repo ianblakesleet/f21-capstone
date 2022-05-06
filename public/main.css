@@ -50,15 +50,17 @@ section{
     
 }
 .todoItemBox{
-    /* padding-bottom: 10px; */
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
 }
 .todoItem{
     width: 350px;
     background-color: rgba(255,255,255, 0.6);
     border-radius: 10px;
-    font-size: .8rem;
-    height: 1.2rem;
+    font-size: 1rem;
+    /* height: 2rem; */
     appearance: none;
 	border: none;
 	outline: none;

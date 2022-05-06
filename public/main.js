@@ -2,6 +2,9 @@ const form = document.querySelector('#addTodoForm')
 const todoContentBox = document.querySelector('#todoContentBox')
 const taskVal = document.querySelector('#todoValue')
 const currentUserId = localStorage.getItem('userId')
+const welcomeMessage = document.querySelector('#welcome-banner')
+const backToLogin = document.getElementById('signout')
+welcomeMessage.innerText += ' ' + window.localStorage.getItem('username')
 
 const createCard = (task, task_id) => {
   //getting the val of forms input to then assign to newly appended input
@@ -28,6 +31,7 @@ const createCard = (task, task_id) => {
   todoItemBox.appendChild(todoItem)
   todoItemBox.appendChild(editBtn)
   todoItemBox.appendChild(deleteBtn)
+  autoGrow(todoItem)
   //appending to html
   taskVal.value = ''
   //resets the inputfield
@@ -83,11 +87,6 @@ form.addEventListener('submit', (e) => {
   })
 })
 
-const welcomeMessage = document.querySelector('#welcome-banner')
-const backToLogin = document.getElementById('signout')
-
-welcomeMessage.innerText += ' ' + window.localStorage.getItem('username')
-
 backToLogin.addEventListener('click', () => {
   window.localStorage.removeItem('userId')
   window.localStorage.removeItem('username')
@@ -105,7 +104,7 @@ window.addEventListener('load', () => {
   })
 })
 
-//text area auto resizing.
+//text area auto resizing, also implemented inside create function to reset size on todo create.
 
 const autoGrow = (element) => {
   element.style.height = '5px'
