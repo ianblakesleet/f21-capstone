@@ -12,12 +12,12 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 
 module.exports = {
   createTodos: (req, res) => {
-    const { task, id } = req.body
+    const { task, id, task_title } = req.body
     sequelize
       .query(
         `
-    INSERT INTO tasks (author_id, task)
-    VALUES (${id}, '${task}')
+    INSERT INTO tasks (author_id, task_title, task)
+    VALUES (${id}, '${task_title}', '${task}')
     RETURNING * ;   
     `
       )

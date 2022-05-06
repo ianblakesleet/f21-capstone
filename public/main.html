@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
     <title>Capstone</title>
 </head>
 <body>
@@ -18,14 +19,18 @@
         <section>
             <div id="addTodoBox">
                 <form id="addTodoForm">
-                    <input id="todoValue" type="text" placeholder="Type here...">
-                    <button class="addTodo">Add</button>
+                    <input id="titleValue"type="text" placeholder="Title...">
+                    <div class="formDiv">
+                       <input id="todoValue" type="text" placeholder="Type here...">
+                       <button class="addTodo">Add</button>
+                   </div>
                 </form>
         
             </div>
              <div id="todoContentBox">
+                 <span>Task Items</span>
                   <!-- <div class="todoItemBox">
-                      <div class= "todoTitlebox">
+                      <div class= "todoTitleBox">
                           <input class="todoItemTitle" type="text" value="exampleTitle" readonly>
                     </div>
                     <div class="todoDescription">

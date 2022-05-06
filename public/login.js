@@ -14,6 +14,7 @@ loginForm.addEventListener('submit', (e) => {
     if (userEmail.value === email && userPass.value === user_pass) {
       window.localStorage.setItem('userId', user_id)
       window.localStorage.setItem('username', `${username}`)
+      window.localStorage.setItem('authenticated', true)
       window.location.href = '/public/main.html'
       //once it verifies info from database, it will save user_id and username into local storage. Then route to main app with that info.
     } else {
