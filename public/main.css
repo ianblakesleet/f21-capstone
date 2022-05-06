@@ -6,10 +6,11 @@
 }
 body{
     background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: whitesmoke
 
 }
