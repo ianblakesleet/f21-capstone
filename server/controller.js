@@ -132,10 +132,11 @@ module.exports = {
         `
       )
       .then((dbRes) => {
-        const validPass = bcrypt.compareSync(password, user_pass.hash)
-        if (validPass) {
-          res.status(200).send('true')
-        }
+        // const validPass = bcrypt.compareSync(password, dbRes.user_pass.hash)
+        console.log(dbRes.user_pass)
+        // if (validPass) {
+        //   res.status(200).send('true')
+        // }
       })
   },
 }
