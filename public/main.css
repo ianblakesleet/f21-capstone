@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	box-sizing: border-box;
-	font-family: 'Koulen', cursive;;
+	font-family: 'Koulen', cursive;
 }
 body{
     background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
@@ -59,15 +59,15 @@ section{
 	outline: none;
     border: none;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
     color: rgba(black, 0.8);
-    opacity: 1; /* Firefox */
+    opacity: 1; 
   }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
     color: rgba(black, 0.8);
   }
   
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder { 
     color: rgba(black, 0.8);
   }
 .todoItemBox{
@@ -81,7 +81,7 @@ section{
     background-color: rgba(255,255,255, 0.6);
     border-radius: 10px;
     font-size: 1rem;
-    /* height: 2rem; */
+   
     appearance: none;
 	border: none;
 	outline: none;
@@ -106,7 +106,7 @@ section{
     text-align: center;
 }
 .textChange{
-    color: #296300;;
+    color: #296300;
 }
 .editTodo, .deleteTodo, .addTodo {
     border-radius: 10px;
@@ -168,9 +168,7 @@ section{
 
 
 
-/*--------------------------------------------------MEDIA QUERIES--------------------------------------------*/
-/* max width - ex: 400px or less... */
-/* for small phones */
+
 @media screen and (max-width: 400px) {
     * {
         margin: 0;
@@ -253,7 +251,7 @@ section{
         display: flex;
         flex-wrap: wrap;
         justify-content: end;
-        /* flex-direction: column; */
+      
     }
     .todoItemTitle{
         background-color: rgba(255,255,255, 0.6);
@@ -313,11 +311,11 @@ section{
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* justify-content: center; */
+        
         
         }
     .todoValue{
-        /* display: flex; */
+      
         justify-content: center;
         
     }
@@ -331,9 +329,9 @@ section{
     * {
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Koulen', cursive;;
+        font-family: 'Koulen', cursive; 
     }
-    body{
+    body {
         background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
         background-color: black;
         background-repeat: no-repeat;
@@ -362,7 +360,6 @@ section{
         margin-bottom: 3rem;
         text-align: center;
         align-items: center;
-        /* width: 350px; */
     }
     #todoValue{
         font-size: 1rem;
@@ -409,7 +406,6 @@ section{
         display: flex;
         flex-wrap: wrap;
         justify-content: end;
-        /* flex-direction: column; */
     }
     .todoItemTitle{
         background-color: rgba(255,255,255, 0.6);
@@ -424,7 +420,7 @@ section{
         text-align: center;
     }
     .textChange{
-        color: #296300;;
+        color: #296300;
     }
     .editTodo, .addTodo {
         border-radius: 10px;
@@ -469,13 +465,9 @@ section{
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* justify-content: center; */
-        
         }
     .todoValue{
-        /* display: flex; */
         justify-content: center;
-        
     }
     .addTodo{
         margin-top: 10px;
