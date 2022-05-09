@@ -75,11 +75,9 @@ const createCard = (task, task_id, task_title) => {
         updatedTitle: `${todoItemTitle.value}`,
       }
 
-      axios
-        .put(`/api/user/${task_id}`, editedTodo)
-        .then((res) => {
-          console.log(res.data)
-        })
+      axios.put(`/api/user/${task_id}`, editedTodo).then((res) => {
+        console.log(res.data)
+      })
     }
   })
   deleteBtn.addEventListener('click', () => {
@@ -127,7 +125,7 @@ window.addEventListener('load', () => {
   if (!window.localStorage.getItem('authenticated')) {
     window.location.href = '/public/login.html'
   } else {
-    axios.get(`3030/api/user/${currentUserId}`).then((res) => {
+    axios.get(`/api/user/${currentUserId}`).then((res) => {
       for (let i = 0; i < res.data.length; i++) {
         const { task, task_id, task_title } = res.data[i]
         console.log(res.data[i])

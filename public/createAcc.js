@@ -13,7 +13,7 @@ createForm.addEventListener('submit', (e) => {
 
   let emailCheck = [...email.value]
   if (emailCheck.includes('@')) {
-    axios.post('http://localhost:3030/api/user/create', body).then((res) => {
+    axios.post('/api/user/create', body).then((res) => {
       window.location.href = '/public/login.html'
       //once you create account, you will get routed back to login
     })
