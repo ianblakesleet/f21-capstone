@@ -31,5 +31,6 @@ app.delete('/api/user/:task_id', deleteTodo)
 //user authentication
 app.post('/api/user/auth', authUser)
 app.post('/api/user/create', createUser)
-const port = process.env.PORT || 3030
+
+const port = process.env.PORT || SERVER_PORT
 app.listen(port, () => console.log('Server running on 3030'))
