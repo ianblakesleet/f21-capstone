@@ -88,6 +88,7 @@ const createCard = (task, task_id, task_title) => {
     })
   })
 }
+//create task item
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   let taskItem = taskVal.value
@@ -117,7 +118,7 @@ backToLogin.addEventListener('click', () => {
   window.localStorage.removeItem('userId')
   window.localStorage.removeItem('username')
   window.localStorage.removeItem('authenticated')
-  window.location.href = './login.html'
+  window.location.href = '/public/login.html'
 })
 
 //loops over all user data on tasks to render it on screen load
