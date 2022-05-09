@@ -109,9 +109,20 @@ section{
 .textChange{
     color: #296300;
 }
-.editTodo, .deleteTodo, .addTodo {
+.editTodo, .addTodo {
     border-radius: 10px;
-    background-color: rgba(255,255,255, 0.5);
+    background-color: #9FC088;
+    cursor: pointer;
+    appearance: none;
+	border: none;
+	outline: none;
+    transition-duration: .6s;
+    margin-LEFT: 5px;
+    align-self: center;
+}
+.deleteTodo {
+    border-radius: 10px;
+    background-color: rgb(255, 94, 0);
     cursor: pointer;
     appearance: none;
 	border: none;
@@ -133,12 +144,11 @@ section{
 }
 .deleteTodo:hover{
     border-radius: 10px;
-    background-color: #f70101c0;
     cursor: pointer;
     appearance: none;
 	border: none;
 	outline: none;
-    transform: translateX(.5rem)
+    transform: translateY(-.5rem)
 }
 #signout {
     border-radius: 10px;
@@ -443,7 +453,7 @@ section{
     
     .deleteTodo {
         border-radius: 5px;
-        background-color: rgb(255, 94, 0);;
+        background-color: rgb(255, 94, 0);
         cursor: pointer;
         appearance: none;
         border: none;
