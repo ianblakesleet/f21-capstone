@@ -6,13 +6,12 @@ const app = express()
 const { SERVER_PORT } = process.env
 app.use(cors())
 app.use(express.json())
-require('./controller')
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/main.html'))
 })
-app.use(express.static('../public'))
-
+// app.use(express.static('../public'))
+app.use('/public', express.static(path.join(__dirname, '../public')))
 const {
   createTodos,
   getAllTodos,
