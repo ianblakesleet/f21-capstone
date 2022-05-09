@@ -6,6 +6,12 @@ const { SERVER_PORT } = process.env
 app.use(cors())
 app.use(express.json())
 require('./controller')
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/main.html'))
+})
+app.use(express.static('public'))
+
 const {
   createTodos,
   getAllTodos,
@@ -24,5 +30,5 @@ app.delete('/api/user/:task_id', deleteTodo)
 //user authentication
 app.post('/api/user/auth', authUser)
 app.post('/api/user/create', createUser)
-
-app.listen(SERVER_PORT, () => console.log('Server running on 3030'))
+const port = process.env.PORT || 3030
+app.listen(port, () => console.log('Server running on 3030'))
