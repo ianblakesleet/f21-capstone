@@ -76,7 +76,7 @@ const createCard = (task, task_id, task_title) => {
       }
 
       axios
-        .put(`http://localhost:3030/api/user/${task_id}`, editedTodo)
+        .put(`/api/user/${task_id}`, editedTodo)
         .then((res) => {
           console.log(res.data)
         })
@@ -85,7 +85,7 @@ const createCard = (task, task_id, task_title) => {
   deleteBtn.addEventListener('click', () => {
     todoItemBox.remove()
     todoDescription.remove()
-    axios.delete(`http://localhost:3030/api/user/${task_id}`).then((res) => {
+    axios.delete(`/api/user/${task_id}`).then((res) => {
       console.log('deleted task!')
     })
   })
@@ -105,7 +105,7 @@ form.addEventListener('submit', (e) => {
   } else if (!titleItem) {
     alert('you must add a title to the task!')
   } else {
-    axios.post('http://localhost:3030/api/user', taskBody).then((res) => {
+    axios.post('3030/api/user', taskBody).then((res) => {
       const { task, task_id, task_title } = res.data[0]
       console.log(res.data)
       console.log(task, task_id, task_title)
@@ -127,7 +127,7 @@ window.addEventListener('load', () => {
   if (!window.localStorage.getItem('authenticated')) {
     window.location.href = '/public/login.html'
   } else {
-    axios.get(`http://localhost:3030/api/user/${currentUserId}`).then((res) => {
+    axios.get(`3030/api/user/${currentUserId}`).then((res) => {
       for (let i = 0; i < res.data.length; i++) {
         const { task, task_id, task_title } = res.data[i]
         console.log(res.data[i])
