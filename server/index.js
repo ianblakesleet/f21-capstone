@@ -28,8 +28,8 @@ app.put('/api/user/:task_id', editTodos)
 app.get('/api/user/:userId', getAllTodos)
 app.delete('/api/user/:task_id', deleteTodo)
 //user authentication
-app.post('/api/user/auth', authUser)
-app.post('/api/user/create', createUser)
+app.post('/api/user/auth', authUserBcrypt)
+app.post('/api/user/create', createUserBcrypt)
 
 const port = process.env.PORT || SERVER_PORT
 app.listen(port, () => console.log('Server running on 3030'))

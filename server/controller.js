@@ -128,15 +128,20 @@ module.exports = {
         `SELECT user_id, email, user_pass, username
        FROM users
        WHERE email = '${email}'
-       RETURNING *
         `
       )
       .then((dbRes) => {
-        // const validPass = bcrypt.compareSync(password, dbRes.user_pass.hash)
-        console.log(dbRes.user_pass)
-        // if (validPass) {
-        //   res.status(200).send('true')
-        // }
+        // console.log(dbRes[0][0].user_pass)
+        const validPass = bcrypt.compareSync(password, dbRes[0][0].user_pass)
+        if (validPass) {
+          console.log('valid')
+          let obj = { ...dbRes[0] }
+          delete obj.user_pass
+          res.status(200).send(obj)
+        } else {
+          console.log('wrong pass')
+          res.status(400).send('Wrong password')
+        }
       })
   },
 }

@@ -12,12 +12,15 @@ createForm.addEventListener('submit', (e) => {
   console.log('submit!')
 
   let emailCheck = [...email.value]
-  if (emailCheck.includes('@')) {
+  let passCheck = [...password.value]
+  if (emailCheck.includes('@') && passCheck.length > 6) {
     axios.post('/api/user/create', body).then((res) => {
       window.location.href = '/public/login.html'
       //once you create account, you will get routed back to login
     })
+  } else if (emailCheck.includes('@') && passCheck.length < 6) {
+    alert('Password must be 6 digits or more!')
   } else {
-    alert('no')
+    alert('invalid email')
   }
 })
