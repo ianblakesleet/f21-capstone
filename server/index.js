@@ -10,7 +10,7 @@ require('./controller')
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/main.html'))
 })
-app.use(express.static('public'))
+app.use(express.static('../public'))
 
 const {
   createTodos,
