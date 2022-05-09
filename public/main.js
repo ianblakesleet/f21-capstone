@@ -103,7 +103,7 @@ form.addEventListener('submit', (e) => {
   } else if (!titleItem) {
     alert('you must add a title to the task!')
   } else {
-    axios.post('3030/api/user', taskBody).then((res) => {
+    axios.post('/api/user', taskBody).then((res) => {
       const { task, task_id, task_title } = res.data[0]
       console.log(res.data)
       console.log(task, task_id, task_title)
