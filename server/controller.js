@@ -1,7 +1,8 @@
+const bcrypt = require('bcryptjs')
 require('dotenv').config()
-const { CONNECTION_STRING } = process.env
+const { DATABASE_URL } = process.env
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize(CONNECTION_STRING, {
+const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
@@ -103,5 +104,38 @@ module.exports = {
         res.status(200).send(dbRes[0])
       })
       .catch((err) => console.log(err))
+  },
+  createUserBcrypt: (req, res) => {
+    const { email, username, password } = req.body
+    const salt = bcrypt.genSaltSync(5)
+    const pHash = bcrypt.hashSync(password, salt)
+    sequelize
+      .query(
+        `
+      INSERT INTO users (email, username, user_pass)
+      VALUES ('${email}', '${username}', '${pHash}');
+      `
+      )
+      .then((dbRes) => {
+        res.status(200).send(dbRes[0])
+      })
+      .catch((err) => console.log(err))
+  },
+  authUserBcrypt: (req, res) => {
+    const { email, password } = req.body
+    sequelize
+      .query(
+        `SELECT user_id, email, user_pass, username
+       FROM users
+       WHERE email = '${email}'
+       RETURNING *
+        `
+      )
+      .then((dbRes) => {
+        const validPass = bcrypt.compareSync(password, user_pass.hash)
+        if (validPass) {
+          res.status(200).send('true')
+        }
+      })
   },
 }

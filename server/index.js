@@ -11,8 +11,10 @@ const {
   getAllTodos,
   editTodos,
   deleteTodo,
-  createUser,
   authUser,
+  createUserBcrypt,
+  authUserBcrypt,
+  createUser,
 } = require('./controller')
 
 app.post('/api/user', createTodos)
