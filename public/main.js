@@ -112,7 +112,7 @@ form.addEventListener('submit', (e) => {
       createCard(task, task_id, task_title)
     })
   }
-  document.querySelector('#todoValue').style.height = '27px'
+  document.querySelector('#todoValue').style.height = '25px'
 })
 
 backToLogin.addEventListener('click', () => {

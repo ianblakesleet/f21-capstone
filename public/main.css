@@ -41,7 +41,7 @@ section{
 #todoValue{
     width: 450px;
     font-size: 1rem;
-    height: 2rem;
+    height: 25px;
     border-radius: 10px;
     background-color: rgba(255,255,255, 0.6);
     appearance: none;
