@@ -6,7 +6,7 @@ const currentUserId = localStorage.getItem('userId')
 const welcomeMessage = document.querySelector('#welcome-banner')
 const backToLogin = document.getElementById('signout')
 welcomeMessage.innerText += ' ' + window.localStorage.getItem('username')
-
+//function to create elements in dom
 const createCard = (task, task_id, task_title) => {
   const todoItemBox = document.createElement('div')
   const todoTitleBox = document.createElement('div')
@@ -88,7 +88,7 @@ const createCard = (task, task_id, task_title) => {
     })
   })
 }
-//create task item
+//create task item event listener
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   let taskItem = taskVal.value
@@ -114,7 +114,7 @@ form.addEventListener('submit', (e) => {
   }
   document.querySelector('#todoValue').style.height = '25px'
 })
-
+//signout button
 backToLogin.addEventListener('click', () => {
   window.localStorage.removeItem('userId')
   window.localStorage.removeItem('username')
@@ -122,7 +122,7 @@ backToLogin.addEventListener('click', () => {
   window.location.href = '/public/login.html'
 })
 
-//loops over all user data on tasks to render it on screen load
+//loops over all user data on a users tasks to then render it on screen load
 window.addEventListener('load', () => {
   if (!window.localStorage.getItem('authenticated')) {
     window.location.href = '/public/login.html'
@@ -137,7 +137,7 @@ window.addEventListener('load', () => {
   }
 })
 
-//text area auto resizing, also implemented inside create function to reset size on todo create.
+//text area auto resizing (width and height), also implemented inside create function to reset size on todo create.
 
 const autoGrow = (element) => {
   element.style.height = '5px'
